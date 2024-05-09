@@ -8,6 +8,6 @@
 <button mat-button [matMenuTriggerFor]="cadastros">Cadastros</button>
 <mat-menu #cadastros>
     <button mat-menu-item>Usuários</button>
-    <button mat-menu-item>Pessoas</button>
+    <button mat-menu-item [routerLink]="['cadastro/pessoa']">Pessoas</button>
     <button mat-menu-item>Funcionários</button>
 </mat-menu>

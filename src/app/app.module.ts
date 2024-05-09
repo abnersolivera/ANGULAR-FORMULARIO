@@ -7,19 +7,27 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { HeaderComponent } from "./components/header/header.component";
 import { PessoaPageComponent } from "./pages/pessoa-page/pessoa-page.component";
+import { PessoaAdicionarPageComponent } from "./pages/pessoa-adicionar-page/pessoa-adicionar-page.component";
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        PessoaPageComponent
+        PessoaPageComponent,
+        PessoaAdicionarPageComponent
     ],
     imports:[
         BrowserModule,
         AppRoutingModule,
+        FormsModule,
         BrowserAnimationsModule,
         MatButtonModule,
-        MatMenuModule
+        MatMenuModule,
+        MatInputModule,
+        MatSelectModule
     ],
     providers: [],
     bootstrap: [AppComponent]
