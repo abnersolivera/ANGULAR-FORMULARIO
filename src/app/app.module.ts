@@ -10,7 +10,7 @@ import { PessoaPageComponent } from "./pages/pessoa-page/pessoa-page.component";
 import { PessoaAdicionarPageComponent } from "./pages/pessoa-adicionar-page/pessoa-adicionar-page.component";
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -23,6 +23,7 @@ import { FormsModule } from "@angular/forms";
         BrowserModule,
         AppRoutingModule,
         FormsModule,
+        ReactiveFormsModule,
         BrowserAnimationsModule,
         MatButtonModule,
         MatMenuModule,
