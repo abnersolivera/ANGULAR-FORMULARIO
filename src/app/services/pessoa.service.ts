@@ -4,12 +4,23 @@ import { Observable, of, tap } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class PessoaService {
+    id = 1;
     constructor() { }
 
     salvar(pessoa: Pessoa): Observable<Pessoa> {
         return of(pessoa)
         .pipe(
-            tap(pessoa => localStorage.setItem('pessoa', JSON.stringify(pessoa)))
+            tap((p) => {localStorage.setItem('pessoa_' + this.id, JSON.stringify(pessoa)); this.id++})
         );
+    }
+
+    buscar(id: string): Pessoa {
+        const pessoa  = localStorage.getItem('pessoa_' + id);
+
+        return JSON.parse(pessoa ? pessoa : "{}");
+    }
+
+    editar(pessoa: Pessoa) {
+        localStorage.setItem('pessoa_' + pessoa.id, JSON.stringify(pessoa));
     }
 }
