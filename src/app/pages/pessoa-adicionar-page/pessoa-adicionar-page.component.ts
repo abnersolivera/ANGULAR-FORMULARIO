@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { PessoaService } from '../../services/pessoa.service';
+import { Pessoa } from '../../model/pessoa.model';
 
 @Component({
   selector: 'app-pessoa-adicionar-page',
@@ -17,12 +19,15 @@ export class PessoaAdicionarPageComponent {
     hobie: ['']
   });
 
-  constructor(private formBuilder: FormBuilder) {  }
+  constructor(private formBuilder: FormBuilder, private pessoaService : PessoaService) {  }
 
   salvar() {
     if(this.formGroup.valid) {
       console.log("Salvando pessoa...");
-      console.log(this.formGroup.value);
+      this.pessoaService.salvar(this.formTovalue(this.formGroup))
+      .subscribe(pessoa => {
+        alert("Pessoa salva com sucesso!");
+      });
     }
     else{
       alert("Fomulário inválido!");
@@ -31,6 +36,13 @@ export class PessoaAdicionarPageComponent {
 
   isError(control: 'email' | 'nome' | 'hobie', validor: string){
     return this.formGroup.controls[control].getError(validor);
+  }
 
+  formTovalue(form: typeof this.formGroup) : Pessoa {
+    return {
+      nome: form.value.nome!,
+      email: form.value.email!,
+      hobie: form.value.hobie!
+    }
   }
 }
