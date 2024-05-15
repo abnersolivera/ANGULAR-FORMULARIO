@@ -10,6 +10,8 @@
             <mat-label>Email</mat-label>
             <input matInput placeholder="Email" name="email" type="email" formControlName="email">
         </mat-form-field>
+        <p class="error" *ngIf="isError('email', 'required')">E-mail obrigatorio!</p>
+        <p class="error" *ngIf="isError('email', 'email')">Não é um E-mail valido!</p>
     </div>
     <div>
         <mat-form-field>
