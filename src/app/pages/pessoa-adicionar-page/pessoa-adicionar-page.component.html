@@ -13,7 +13,41 @@
         </mat-form-field>
         <p class="error" *ngIf="isError('email', 'required')">E-mail obrigatorio!</p>
         <p class="error" *ngIf="isError('email', 'email')">Não é um E-mail valido!</p>
+
+        <!-- <mat-form-field appearance="fill">
+            <mat-label>Start Date</mat-label>
+            <input matInput [matDatepicker]="startAt" formControlName="startAt">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="startAt"></mat-datepicker-toggle>
+            <mat-datepicker></mat-datepicker>
+        </mat-form-field> -->
+
+        <mat-form-field appearance="fill">
+            <mat-label>End Date</mat-label>
+            <input matInput placeholder="EndDate" name="endDate" type="date" formControlName="endAt">
+        </mat-form-field>
     </div>
+
+    <div>
+        <mat-form-field>
+            <mat-label>CPF</mat-label>
+            <input matInput placeholder="CPF" name="cpf" type="text" formControlName="cpf" mask="000.000.000-00">
+            <div>
+                <p class="error" *ngIf="isError('cpf', 'required')">
+                    CPF obrigatorio!
+                </p>
+                <p class="error" *ngIf="isError('cpf', 'validateCpf')">
+                    Não é um CPF valido!
+                </p>
+            </div>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>CNPJ</mat-label>
+            <input matInput placeholder="CPNJ" name="cnpj" type="text" formControlName="cnpj" mask="00.000.000/0000-00">
+        </mat-form-field>
+    </div>
+
     <div>
         <mat-form-field>
             <mat-label>Hobbie</mat-label>

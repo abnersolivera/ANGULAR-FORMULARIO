@@ -11,6 +11,8 @@ import { PessoaAdicionarPageComponent } from "./pages/pessoa-adicionar-page/pess
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatNativeDateModule, provideNativeDateAdapter } from "@angular/material/core";
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 
 @NgModule({
     declarations: [
@@ -28,9 +30,16 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
         MatButtonModule,
         MatMenuModule,
         MatInputModule,
-        MatSelectModule
+        MatSelectModule,
+        MatNativeDateModule,
+        NgxMaskDirective,
+        NgxMaskPipe,
+        MatNativeDateModule
     ],
-    providers: [],
+    providers: [
+        provideNgxMask(),
+        provideNativeDateAdapter()
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

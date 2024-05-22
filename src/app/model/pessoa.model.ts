@@ -3,4 +3,9 @@ export interface Pessoa {
     nome: string;
     email: string;
     hobie: string;
+    password: string;
+    startAt: string;
+    endAt: string;
+    cpf: string;
+    cnpj: string;
 }

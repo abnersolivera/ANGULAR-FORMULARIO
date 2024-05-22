@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { PessoaService } from '../../services/pessoa.service';
 import { Pessoa } from '../../model/pessoa.model';
 import { ActivatedRoute } from '@angular/router';
+import { validatorCPF, validatorCNPJ, validatorDateRange } from '../../validators';
 
 @Component({
   selector: 'app-pessoa-adicionar-page',
@@ -15,10 +16,17 @@ export class PessoaAdicionarPageComponent implements OnInit {
   hobbies = ['Correr', 'Nadar', 'Caminhar', 'Pedalar'];
 
   formGroup = this.formBuilder.group({
-    id: this.formBuilder.control<number|null>(null),
+    id: this.formBuilder.control<number | null>(null),
     nome: ['', Validators.required],
     email: ['', Validators.compose([Validators.email, Validators.required])],
     hobie: [''],
+    password: [''],
+    startAt: [''],
+    endAt: [''],
+    cpf: ['', Validators.compose([Validators.required, validatorCPF()])],
+    cnpj: ['', Validators.compose([Validators.required, validatorCNPJ()])],
+  }, {
+    validators: [validatorDateRange()]
   });
 
   constructor(
@@ -51,7 +59,10 @@ export class PessoaAdicionarPageComponent implements OnInit {
     }
   }
 
-  isError(control: 'email' | 'nome' | 'hobie', validor: string) {
+  isError(
+    control: 'email' | 'nome' | 'hobie' | 'cpf' | 'cnpj',
+    validor: string
+  ) {
     return this.formGroup.controls[control].getError(validor);
   }
 
@@ -61,6 +72,11 @@ export class PessoaAdicionarPageComponent implements OnInit {
       nome: form.value.nome!,
       email: form.value.email!,
       hobie: form.value.hobie!,
+      password: form.value.password!,
+      startAt: form.value.startAt!,
+      endAt: form.value.endAt!,
+      cpf: form.value.cpf!,
+      cnpj: form.value.cnpj!,
     };
   }
 }
