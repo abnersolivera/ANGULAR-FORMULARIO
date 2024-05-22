@@ -1,17 +1,22 @@
 import { Injectable } from "@angular/core";
 import { Pessoa } from "../model/pessoa.model";
 import { Observable, of, tap } from "rxjs";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+
+const API_URL = 'https://gorest.co.in/public/v2/users';
+const TOKEN = '1df506799a18c2a9a22eae6dbc8cef7468b0bee10d9f7132f3023e84b6962f2e';
+const AUTH_HEADER = 'Authorization';
+
 
 @Injectable({providedIn: 'root'})
 export class PessoaService {
     id = 1;
-    constructor() { }
+    constructor(private http: HttpClient) { }
 
     salvar(pessoa: Pessoa): Observable<Pessoa> {
-        return of(pessoa)
-        .pipe(
-            tap((p) => {localStorage.setItem('pessoa_' + this.id, JSON.stringify(pessoa)); this.id++})
-        );
+        let headers = new HttpHeaders();
+        headers = headers.set(AUTH_HEADER, `Bearer ${TOKEN}`);
+        return this.http.post<Pessoa>(API_URL, pessoa, {headers: headers});
     }
 
     buscar(id: string): Pessoa {

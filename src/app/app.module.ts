@@ -13,6 +13,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatNativeDateModule, provideNativeDateAdapter } from "@angular/material/core";
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
         MatNativeDateModule,
         NgxMaskDirective,
         NgxMaskPipe,
-        MatNativeDateModule
+        MatNativeDateModule,
+        HttpClientModule
     ],
     providers: [
         provideNgxMask(),

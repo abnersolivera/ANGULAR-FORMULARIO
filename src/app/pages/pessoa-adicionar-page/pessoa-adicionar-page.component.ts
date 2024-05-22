@@ -69,7 +69,9 @@ export class PessoaAdicionarPageComponent implements OnInit {
   formToValue(form: typeof this.formGroup): Pessoa {
     return {
       id: form.value.id!,
-      nome: form.value.nome!,
+      name: form.value.nome!,
+      gender: 'male',
+      status: 'ACTIVE',
       email: form.value.email!,
       hobie: form.value.hobie!,
       password: form.value.password!,
