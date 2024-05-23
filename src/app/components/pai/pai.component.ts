@@ -34,6 +34,4 @@ export class PaiComponent implements OnInit{
     console.log("Selecionado: ", numero)
     this.selecionado = numero
   }
-
-
 }

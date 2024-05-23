@@ -16,6 +16,8 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 import { HttpClientModule } from "@angular/common/http";
 import { PaiComponent } from "./components/pai/pai.component";
 import { FilhoComponent } from "./components/filho/filho.component";
+import { ItemAddComponent } from "./components/item-add/item-add.component";
+import { ItemListComponent } from "./components/item-list/item-list.component";
 
 @NgModule({
     declarations: [
@@ -24,7 +26,9 @@ import { FilhoComponent } from "./components/filho/filho.component";
         PessoaPageComponent,
         PessoaAdicionarPageComponent,
         PaiComponent,
-        FilhoComponent
+        FilhoComponent,
+        ItemListComponent,
+        ItemAddComponent
     ],
     imports:[
         BrowserModule,
