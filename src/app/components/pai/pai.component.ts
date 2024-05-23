@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FilhoComponent } from '../filho/filho.component';
 
 @Component({
   selector: 'app-pai',
@@ -9,6 +10,10 @@ export class PaiComponent implements OnInit{
   selecionado: number | null = null
   start = 5
   end = 15
+
+  @ViewChild("filho")
+  filho!: FilhoComponent
+
   ngOnInit(): void {
     
   }
@@ -21,7 +26,9 @@ export class PaiComponent implements OnInit{
     this.end++
   }
 
-  reset(){}
+  reset(){
+    this.filho.reset()
+  }
 
   mostrarSelecionado(numero: number){
     console.log("Selecionado: ", numero)
