@@ -1,0 +1,10 @@
+<h1>Componente Pai</h1>
+
+<button type="button" (click)="incrementarStart()">Icrementar Start</button> <br>
+<button type="button" (click)="incrementarEnd()">Icrementar End</button> <br>
+<button type="button" (click)="reset()">Resetar</button> <br>
+
+<p>Numero selecionado: {{selecionado}}</p>
+
+
+<app-filho [start]="start" [end]="end" (numberSelected)="mostrarSelecionado($event)"></app-filho>

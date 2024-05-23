@@ -14,13 +14,17 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatNativeDateModule, provideNativeDateAdapter } from "@angular/material/core";
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 import { HttpClientModule } from "@angular/common/http";
+import { PaiComponent } from "./components/pai/pai.component";
+import { FilhoComponent } from "./components/filho/filho.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         PessoaPageComponent,
-        PessoaAdicionarPageComponent
+        PessoaAdicionarPageComponent,
+        PaiComponent,
+        FilhoComponent
     ],
     imports:[
         BrowserModule,
@@ -36,7 +40,7 @@ import { HttpClientModule } from "@angular/common/http";
         NgxMaskDirective,
         NgxMaskPipe,
         MatNativeDateModule,
-        HttpClientModule
+        HttpClientModule,        
     ],
     providers: [
         provideNgxMask(),
