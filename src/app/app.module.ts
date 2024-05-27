@@ -18,6 +18,9 @@ import { PaiComponent } from "./components/pai/pai.component";
 import { FilhoComponent } from "./components/filho/filho.component";
 import { ItemAddComponent } from "./components/item-add/item-add.component";
 import { ItemListComponent } from "./components/item-list/item-list.component";
+import { DatepickerComponent } from "./components/datepicker/datepicker.component";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
     declarations: [
@@ -28,7 +31,8 @@ import { ItemListComponent } from "./components/item-list/item-list.component";
         PaiComponent,
         FilhoComponent,
         ItemListComponent,
-        ItemAddComponent
+        ItemAddComponent,
+        DatepickerComponent
     ],
     imports:[
         BrowserModule,
@@ -44,7 +48,9 @@ import { ItemListComponent } from "./components/item-list/item-list.component";
         NgxMaskDirective,
         NgxMaskPipe,
         MatNativeDateModule,
-        HttpClientModule,        
+        HttpClientModule,  
+        MatFormFieldModule,
+        MatDatepickerModule
     ],
     providers: [
         provideNgxMask(),
