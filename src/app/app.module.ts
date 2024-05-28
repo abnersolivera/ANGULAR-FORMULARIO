@@ -33,7 +33,8 @@ import {
   } from '@angular/material/dialog';
 import { DialogOverviewExampleDialogComponent } from "./components/dialog-overview-example-dialog/dialog-overview-example-dialog.component";
 import { TableComponent } from "./components/table/table.component";
-import {MatTableModule} from '@angular/material/table';
+import {MatTableModule, MatTableDataSource} from '@angular/material/table';
+import { MatSortModule,Sort, MatSort } from "@angular/material/sort";
 
 @NgModule({
     declarations: [
@@ -72,6 +73,7 @@ import {MatTableModule} from '@angular/material/table';
         MatDialogActions,
         MatDialogClose,
         MatTableModule,
+        MatSortModule,
     ],
     providers: [
         provideNgxMask(),
