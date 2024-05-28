@@ -32,6 +32,8 @@ import {
     MatDialogClose,
   } from '@angular/material/dialog';
 import { DialogOverviewExampleDialogComponent } from "./components/dialog-overview-example-dialog/dialog-overview-example-dialog.component";
+import { TableComponent } from "./components/table/table.component";
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
     declarations: [
@@ -45,7 +47,8 @@ import { DialogOverviewExampleDialogComponent } from "./components/dialog-overvi
         ItemAddComponent,
         DatepickerComponent,
         ModalExampleComponent,
-        DialogOverviewExampleDialogComponent
+        DialogOverviewExampleDialogComponent,
+        TableComponent
     ],
     imports:[
         BrowserModule,
@@ -68,6 +71,7 @@ import { DialogOverviewExampleDialogComponent } from "./components/dialog-overvi
         MatDialogContent,
         MatDialogActions,
         MatDialogClose,
+        MatTableModule,
     ],
     providers: [
         provideNgxMask(),
