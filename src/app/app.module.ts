@@ -21,6 +21,17 @@ import { ItemListComponent } from "./components/item-list/item-list.component";
 import { DatepickerComponent } from "./components/datepicker/datepicker.component";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ModalExampleComponent } from "./components/modal/modal-example.component";
+import {
+    MatDialog,
+    MAT_DIALOG_DATA,
+    MatDialogRef,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
+  } from '@angular/material/dialog';
+import { DialogOverviewExampleDialogComponent } from "./components/dialog-overview-example-dialog/dialog-overview-example-dialog.component";
 
 @NgModule({
     declarations: [
@@ -32,7 +43,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
         FilhoComponent,
         ItemListComponent,
         ItemAddComponent,
-        DatepickerComponent
+        DatepickerComponent,
+        ModalExampleComponent,
+        DialogOverviewExampleDialogComponent
     ],
     imports:[
         BrowserModule,
@@ -50,7 +63,11 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
         MatNativeDateModule,
         HttpClientModule,  
         MatFormFieldModule,
-        MatDatepickerModule
+        MatDatepickerModule,
+        MatDialogTitle,
+        MatDialogContent,
+        MatDialogActions,
+        MatDialogClose,
     ],
     providers: [
         provideNgxMask(),
